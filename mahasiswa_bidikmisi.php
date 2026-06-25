@@ -13,6 +13,7 @@ class MahasiswaBidikmisi extends Mahasiswa {
         $this->danaSakuSubsidi = $danaSakuSubsidi;
     }
 
+    // OVERRIDING: Gratis penuh (Rp 0) ditanggung negara melalui KIP-K
     public function hitungTagihanSemester(): float {
         return 0.00;
     }
@@ -25,7 +26,7 @@ class MahasiswaBidikmisi extends Mahasiswa {
         echo "Semester       : " . $this->semester . "<br>";
         echo "Nomor KIP-K    : " . $this->nomorKIPkuliah . "<br>";
         echo "Dana Saku/Bulan: Rp " . number_format($this->danaSakuSubsidi, 2, ',', '.') . "<br>";
-        echo "Total Tagihan  : Rp " . number_format($this->hitungTagihanSemester(), 2, ',', '.') . " (Disubsidi Penuh)<br>";
+        echo "Total Tagihan  : Rp " . number_format($this->hitungTagihanSemester(), 2, ',', '.') . " (Gratis Penuh - Ditanggung KIP-Kuliah)<br>";
         echo "------------------------------------------------<br><br>";
     }
 }

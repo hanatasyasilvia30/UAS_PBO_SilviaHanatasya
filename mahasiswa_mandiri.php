@@ -13,19 +13,22 @@ class MahasiswaMandiri extends Mahasiswa {
         $this->namaWali = $namaWali;
     }
 
+    // OVERRIDING: Tarif UKT + Biaya Operasional Rp 100.000
     public function hitungTagihanSemester(): float {
-        return $this->tarifUktNominal;
+        return $this->tarifUktNominal + 100000.00;
     }
 
     public function tampilkanSpesifikasiAkademik(): void {
         echo "=== SPESIFIKASI AKADEMIK: MAHASISWA MANDIRI ===<br>";
-        echo "ID Mahasiswa : " . $this->idMahasiswa . "<br>";
-        echo "Nama         : " . $this->namaMahasiswa . "<br>";
-        echo "NIM          : " . $this->nim . "<br>";
-        echo "Semester     : " . $this->semester . "<br>";
-        echo "Golongan UKT : " . $this->golonganUkt . "<br>";
-        echo "Nama Wali    : " . $this->namaWali . "<br>";
-        echo "Total Tagihan: Rp " . number_format($this->hitungTagihanSemester(), 2, ',', '.') . "<br>";
+        echo "ID Mahasiswa   : " . $this->idMahasiswa . "<br>";
+        echo "Nama           : " . $this->namaMahasiswa . "<br>";
+        echo "NIM            : " . $this->nim . "<br>";
+        echo "Semester       : " . $this->semester . "<br>";
+        echo "Golongan UKT   : " . $this->golonganUkt . "<br>";
+        echo "Nama Wali      : " . $this->namaWali . "<br>";
+        echo "Tarif Dasar UKT: Rp " . number_format($this->tarifUktNominal, 2, ',', '.') . "<br>";
+        echo "Biaya Tambahan : Rp 100.000,00 (Operasional Kemahasiswaan)<br>";
+        echo "Total Tagihan  : Rp " . number_format($this->hitungTagihanSemester(), 2, ',', '.') . "<br>";
         echo "------------------------------------------------<br><br>";
     }
 }
